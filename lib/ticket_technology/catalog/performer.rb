@@ -9,6 +9,7 @@ module TicketTechnology::Catalog
         element :headliner_id, :as => :id
         element :category_id
         element :event_headliner_name, :as => :name
+        element :headliner, :as => :name
       end
 
       elements :table, :as => :performers, :class => Performer
@@ -18,8 +19,7 @@ module TicketTechnology::Catalog
     # NOTE: not sure if we want to get performers by category id as before,
     # or get all performs.  both are available
     #
-    get :get_headliners_in_category, :as => :fetch do
-      parameter :category_id
+    get :get_headliners, :as => :fetch do
       parameter :b_verbose, :as => :verbose, :default => true
     end
 
