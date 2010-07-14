@@ -15,13 +15,13 @@ module TicketTechnology::Catalog
     end
 
     get :get_categories, :as => :fetch do
-      parameter :b_verbose, :as => :verbose, :default => false
+      parameter :b_verbose, :as => :verbose, :default => true
     end
     get :get_category_info, :as => :fetch_info do
       parameter :category_id
     end
 
-    def self.all(parameters={:verbose => true})
+    def self.all(parameters={})
       fetch(parameters).categories
     end
   end

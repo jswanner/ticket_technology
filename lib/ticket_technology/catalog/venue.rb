@@ -17,14 +17,14 @@ module TicketTechnology::Catalog
     end
 
     get :get_venues, :as => :fetch do
-      parameter :b_verbose, :as => :verbose, :default => false
+      parameter :b_verbose, :as => :verbose, :default => true
     end
 
     get :get_venue_info, :as => :fetch_info do
       parameter :venue_id
     end
 
-    def self.all(parameters={:verbose => true})
+    def self.all(parameters={})
       fetch(parameters).venues
     end
   end

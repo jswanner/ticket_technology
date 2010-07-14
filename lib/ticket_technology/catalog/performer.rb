@@ -20,14 +20,14 @@ module TicketTechnology::Catalog
     #
     get :get_headliners_in_category, :as => :fetch do
       parameter :category_id
-      parameter :b_verbose, :as => :verbose, :default => false
+      parameter :b_verbose, :as => :verbose, :default => true
     end
 
     get :get_headliner_info, :as => :fetch_info do
       parameter :headliner_id
     end
 
-    def self.all(parameters={:verbose => true})
+    def self.all(parameters={})
       fetch(parameters).performers
     end
   end
