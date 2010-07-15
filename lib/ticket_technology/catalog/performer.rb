@@ -30,5 +30,10 @@ module TicketTechnology::Catalog
     def self.all(parameters={})
       fetch(parameters).performers
     end
+
+    def self.by_id(id, parameters={})
+      parameters[:headliner_id] = id
+      fetch_info(parameters).performers.first
+    end
   end
 end
